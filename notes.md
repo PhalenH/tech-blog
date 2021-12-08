@@ -1,0 +1,1 @@
+When a user signs up or logs in, make it so they are taken to their dashboard
