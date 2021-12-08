@@ -3,6 +3,17 @@ const { User } = require("../../models");
 
 // url at this point is: /api/users
 
+// logout user
+userRoutes.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 //create a new user
 userRoutes.post("/", async (req, res) => {
   try {
