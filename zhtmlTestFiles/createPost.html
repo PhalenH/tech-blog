@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="../public/css/style.css" />
   </head>
+
   <body>
     <div class="nav-header">
       <nav>
@@ -22,67 +23,51 @@
         <button id="logout">Logout</button>
       </nav>
       <div id="h1-container">
-        <h1 id="page-name">The Tech Blog</h1>
+        <h1 id="page-name">Dashboard</h1>
       </div>
     </div>
     <main>
-
       <article>
         <div class="blog-post">
-          <h2>Login</h2>
+          <h2>Create New Post</h2>
           <div class="card-body">
             <form>
               <div class="input-spacing">
-                <label for="input-username">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="input-username"
-                />
+                <label for="input-username">Title</label>
+                <input type="text" class="form-control" id="input-username" placeholder="Name of post" />
               </div>
               <div class="input-spacing">
-                <label for="input-password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="input-password"
-                />
+                <label for="post-content">Content</label>
+                <textarea id="post-content" rows="3" name="post-content"></textarea>
               </div>
               <div class="input-spacing">
-                <button type="submit" class="submit-button">Login</button>
+                <button type="submit" class="submit-button">Create</button>
               </div>
             </form>
-            <a href="/signUp">Sign up instead</a>
           </div>
         </div>
       </article>
 
       <article>
         <div class="blog-post">
-          <h2>Sign Up</h2>
+          <h2>Edit Post</h2>
           <div class="card-body">
             <form>
               <div class="input-spacing">
-                <label for="input-username">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="input-username"
-                />
+                <label for="input-username">Title</label>
+                <input type="text" class="form-control" id="input-username" value="{{post.title}}"/>
               </div>
               <div class="input-spacing">
-                <label for="input-password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="input-password"
-                />
+                <label for="post-content">Content</label>
+                <textarea id="post-content" rows="3" name="post-content">{{post.content}</textarea>
               </div>
               <div class="input-spacing">
-                <button type="submit" class="submit-button">Sign Up</button>
+                <button type="submit" class="submit-button">Update Post</button>
+              </div>
+              <div class="input-spacing">
+                <button type="submit" class="submit-button">Delete Post</button>
               </div>
             </form>
-            <a href="/signUp">Login instead</a>
           </div>
         </div>
       </article>
