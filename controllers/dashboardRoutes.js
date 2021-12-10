@@ -57,11 +57,11 @@ router.get("/update/:id", withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     // if (req.session.user_id === post.user_id) {
-      res.render("update-post", {
-        ...post,
-        loggedIn: true,
-      });
-    // } 
+    res.render("update-post", {
+      ...post,
+      loggedIn: true,
+    });
+    // }
     // I don't think I need to check if user since you can only go to your own page
   } catch (err) {
     console.log(err);

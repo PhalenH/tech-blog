@@ -18,17 +18,6 @@ userRoutes.get("/", async (req, res) => {
   }
 });
 
-// logout user
-userRoutes.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
-
 //create a new user
 userRoutes.post("/", async (req, res) => {
   try {
@@ -66,7 +55,7 @@ userRoutes.post("/login", async (req, res) => {
       return;
     }
 
-    // Once user logs in, set up the sessions variable 'loggedIn'
+    // Once user logs in, set up the sessions variable 'loggedIn' and user's ID
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.user_id = userData.id;
@@ -79,6 +68,17 @@ userRoutes.post("/login", async (req, res) => {
   } catch {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+// logout user
+userRoutes.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
   }
 });
 

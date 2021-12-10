@@ -1,0 +1,110 @@
+:root {
+  --primary: #0e387a;
+  --secondary: #9fafca;
+}
+body {
+  background-color: var(--secondary);
+  color: var(--secondary);
+  font-family: "Times New Roman", Times, serif;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: var(--border-text);
+}
+
+.nav-header {
+  background-color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+#h1-container {
+  width: 100%;
+  margin-bottom: 25px;
+}
+#page-name {
+  display: inline;
+  margin-left: 50px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  box-shadow: 5px 5px gray;
+  padding: 2px 20px;
+  border-radius: 10px;
+}
+#logout {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: none;
+}
+
+ article {
+  margin: 20px 50px;
+  border: 5px solid var(--primary);
+}
+
+.blog-post {
+  background-color: var(--primary);
+}
+.card-body {
+  background-color: var(--secondary);
+  color: black;
+  font-size: large;
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px 0px 10px;
+  font-size: 20px;
+}
+.post-header p {
+  font-size: 15px;
+}
+
+.comment-container {
+  background-color: var(--primary);
+  padding-top: 25px;
+}
+.submit-button {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  background-color: gray;
+  color: white;
+  justify-content: center;
+  border: none;
+}
+.comment-form {
+  margin: 20px 50px;
+  border: 5px solid var(--primary);
+}
+.comment-text{
+    background-color: var(--secondary);
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    padding: 20px 15px;
+}
+.comment-text p {
+    width: 100%;
+}
+textarea {
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+}
+.input-spacing {
+    margin-bottom: 20px;
+}
+

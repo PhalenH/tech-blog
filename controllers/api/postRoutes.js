@@ -2,6 +2,8 @@ const postRoutes = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// url at this point is: /api/posts
+
 postRoutes.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll();
@@ -20,8 +22,8 @@ postRoutes.get("/", async (req, res) => {
 postRoutes.post("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.create({
-        ...req.body,
-        user_id: req.session.user_id
+      ...req.body,
+      user_id: req.session.user_id,
     });
     // why do i need ...req.body? req.body didn't work
 

@@ -2,6 +2,8 @@ const commentRoutes = require("express").Router();
 const { Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// url at this point is: /api/comments
+
 commentRoutes.get("/", async (req, res) => {
   try {
     const commentData = await Comment.findAll();
@@ -34,7 +36,7 @@ commentRoutes.post("/:id", withAuth, async (req, res) => {
 });
 
 // delete a comment
-commentRoutes.delete("/:id/comment", withAuth, async (req, res) => {
+commentRoutes.delete("/:id", withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: {
