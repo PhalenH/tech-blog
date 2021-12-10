@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../models");
-const withAuth = require('../utils/auth')
+const withAuth = require("../utils/auth");
 
 // GET all post posts for homepage
 router.get("/", async (req, res) => {
@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
           model: Comment,
           include: [{ model: User, attributes: { exclude: ["password"] } }],
         },
-        // I get I need the comments here, but I'm not rendering it right?
       ],
     });
 
@@ -22,10 +21,10 @@ router.get("/", async (req, res) => {
       res.json("No posts created yet");
     }
 
-    const post = postData.map((post) => post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("homepage", {
-      post,
+      posts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -37,7 +36,7 @@ router.get("/", async (req, res) => {
 router.get("/post/:id", async (req, res) => {
   console.log(req.session);
   try {
-    const postData = await Post.findByPk({
+    const postData = await Post.findByPk(req.params.id, {
       attributes: { exclude: ["user_id"] },
       include: [
         { model: User, attributes: { exclude: ["password"] } },
@@ -52,11 +51,13 @@ router.get("/post/:id", async (req, res) => {
       res.status(404).json("No posts found with this ID!");
     }
     const post = postData.get({ plain: true });
-      res.render("single-post", {
-        ...post,
-        loggedIn: req.session.loggedIn,
-      });
-  } catch {}
+    res.render("single-post", {
+      ...post,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);}
 });
 
 // Login route
