@@ -15,7 +15,7 @@
     <div class="comment-container">
       <div class="comment-text">
         <p>{{comment.comment_content}}</p>
-        <p>{{comment.user.username}}, {{format_date comment.date_created}}</p>
+        <p>-{{comment.user.username}}, {{format_date comment.date_created}}</p>
       </div>
     </div>
   </article>
@@ -24,12 +24,12 @@
 
 {{#if loggedIn}}
 
-  <form class="comment-form">
+  <form data-id="{{id}}" class="comment-form">
     <div class="comment-container">
       <div class="card-body">
         <header>Comment</header>
         <textarea rows="3" name="comment-content"></textarea>
-        <button class="submit-button">Add Comment</button>
+        <button type="submit" class="submit-button">Add Comment</button>
       </div>
     </div>
   </form>

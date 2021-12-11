@@ -5,7 +5,7 @@
 body {
   background-color: var(--secondary);
   color: var(--secondary);
-  font-family: "Times New Roman", Times, serif;
+  font-family: serif;
 }
 
 a:link,

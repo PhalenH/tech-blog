@@ -36,24 +36,24 @@ commentRoutes.post("/:id", withAuth, async (req, res) => {
 });
 
 // delete a comment
-commentRoutes.delete("/:id", withAuth, async (req, res) => {
-  try {
-    const commentData = await Comment.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+// commentRoutes.delete("/:id", withAuth, async (req, res) => {
+//   try {
+//     const commentData = await Comment.destroy({
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.user_id,
+//       },
+//     });
 
-    if (!commentData) {
-      res.status(404).json({ message: "No comments found with this ID!" });
-    }
-    res.status(200).json(commentData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     if (!commentData) {
+//       res.status(404).json({ message: "No comments found with this ID!" });
+//     }
+//     res.status(200).json(commentData);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // update a comment
 
