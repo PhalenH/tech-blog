@@ -1,14 +1,31 @@
 {{> post-details}}
+
+{{#each comments as |comment|}}
+
+  <article>
+    <div class="comment-container">
+      <div class="comment-text">
+        <p>{{comment.comment_content}}</p>
+          <p>{{comment.user.username}}, {{format_date comment.date_created}}</p>
+      </div>
+    </div>
+  </article>
+
+{{/each}}
     
     
 {{#if loggedIn}}
 
-<form>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
+<form class="comment-form">
+        <div class="comment-container">
+          <div class="card-body">
+            <header>Comment</header>
+            <textarea rows="3" name="comment-content"></textarea>
+            <button class="submit-button">Add Comment</button>
+          </div>
+        </div>
+      </form>
 
 {{/if}}
+
+<script src="./js/comment.js"></script>

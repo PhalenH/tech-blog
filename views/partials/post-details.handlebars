@@ -1,12 +1,10 @@
-<article class="card">
-  <a href="/blogPost/{{id}}">
-    <div class="card">
-      <header class="card-header">{{title}}
-      <p>Posted by {{user.username}} on {{date_created}}</p>
-      </header>
-      <div class="card-body">
-        <p class="card-text">{{blog_content}}</p>
-      </div>
+<article>
+  <div class="blog-post">
+    <header class="post-header">{{title}}
+      <p>Posted by {{user.username}} on {{format_date date_created}}</p>
+    </header>
+    <div class="card-body">
+      <p class="card-text">{{post_content}}</p>
     </div>
-  </a>
+  </div>
 </article>

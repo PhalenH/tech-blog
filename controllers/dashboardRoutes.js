@@ -4,18 +4,18 @@ const withAuth = require("../utils/auth");
 
 // url is /dashboard
 
-// gets all user posts
-router.get("/:id", withAuth, async (req, res) => {
+// gets all user's posts
+router.get("/", withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.params.id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Post }],
     });
 
-    const userPost = userData.get({ plain: true });
-    // res.status(200).json(userPost)
+    const posts = userData.get({ plain: true });
+    res.status(200).json(posts)
     res.render("dashboard", {
-      ...userPost,
+      ...posts,
       loggedIn: true,
     });
   } catch (err) {

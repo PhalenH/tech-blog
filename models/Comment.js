@@ -16,6 +16,11 @@ Comment.init(
       allowNull: false,
     // TODO: add validation that there is text 
     },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: DataTypes.NOW,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
