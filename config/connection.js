@@ -17,3 +17,9 @@ if (process.env.JAWSDB_URL) {
 }
 
 module.exports = sequelize;
+// click on configure add ons, add the jawsdbmysql,
+// might be good after that
+// check logs if stuff isn't working
+// next to open app theres ... 
+// view logs there 
+// add jawsDB first, then do a push

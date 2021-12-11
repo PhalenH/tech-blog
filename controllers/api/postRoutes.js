@@ -20,6 +20,7 @@ postRoutes.get("/", async (req, res) => {
 
 // create a post
 postRoutes.post("/", withAuth, async (req, res) => {
+  console.log(req.body)
   try {
     const postData = await Post.create({
       ...req.body,
@@ -35,6 +36,7 @@ postRoutes.post("/", withAuth, async (req, res) => {
 
 // update a post by id
 postRoutes.put("/:id", withAuth, async (req, res) => {
+  console.log(req.body)
   try {
     const postData = await Post.update(req.body, {
       where: {

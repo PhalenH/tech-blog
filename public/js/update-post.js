@@ -5,8 +5,9 @@ const updatePostEventHandler = async (event) => {
   const form = document.querySelector(".update-container");
   const id = form.getAttribute("data-id");
 
+  console.log(id)
   if (title && content) {
-    const response = await fetch(`api/posts/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: "PUT",
       body: JSON.stringify({ title: title, post_content: content }),
       headers: { "Content-Type": "application/json" },
@@ -25,7 +26,7 @@ const deletePostEventHandler = async (event) => {
   const form = document.querySelector(".update-container");
   const id = form.getAttribute("data-id");
 
-  const response = await fetch(`api/posts/${id}`, {
+  const response = await fetch(`/api/posts/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });
@@ -38,9 +39,9 @@ const deletePostEventHandler = async (event) => {
 };
 
 document
-  .querySelector(".update-post-form")
-  .addEventListener("submit", updatePostEventHandler);
+  .querySelector("#update-post-btn")
+  .addEventListener("click", updatePostEventHandler);
 
 document
-  .querySelector(".update-post-form")
-  .addEventListener("submit", deletePostEventHandler);
+  .querySelector("#delete-post-btn")
+  .addEventListener("click", deletePostEventHandler);
