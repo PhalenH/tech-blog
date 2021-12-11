@@ -1,6 +1,6 @@
 const commentEventHandler = async (event) => {
   event.preventDefault();
-  const comment = document.querySelector("#input-username").value.trim();
+  const comment = document.querySelector("#input-comment").value.trim();
   const form = document.querySelector(".comment-form");
   const id = form.getAttribute("data-id");
 
