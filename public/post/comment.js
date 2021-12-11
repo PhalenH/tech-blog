@@ -7,7 +7,8 @@ const commentEventHandler = async (event) => {
   if (comment) {
     const response = await fetch(`/api/comments/${id}`, {
       method: "POST",
-      body: JSON.stringify({ comment }),
+      body: JSON.stringify({ comment_content: comment }),
+      // comment_content is what matches model therefore we need that in req.body
       headers: { "Content-Type": "application/json" },
     });
 

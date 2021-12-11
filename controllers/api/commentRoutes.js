@@ -20,6 +20,7 @@ commentRoutes.get("/", async (req, res) => {
 
 // create a comment
 commentRoutes.post("/:id", withAuth, async (req, res) => {
+  console.log("This is working if we see it")
   try {
     const commentData = await Comment.create({
       ...req.body,

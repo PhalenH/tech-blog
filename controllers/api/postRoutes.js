@@ -25,7 +25,6 @@ postRoutes.post("/", withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-    // why do i need ...req.body? req.body didn't work
 
     res.status(200).json(postData);
   } catch (err) {

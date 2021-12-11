@@ -65,12 +65,9 @@ router.get("/post/:id", async (req, res) => {
 
 // Login route
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-  res.render("login");
+  res.render("dashboard");
 });
+// the login should only render the login, only use re-direct when using auth method
 
 // signup route
 router.get("/signup", (req, res) => {
