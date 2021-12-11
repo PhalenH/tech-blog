@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-// GET all post posts for homepage
+// GET all posts for homepage
 router.get("/", async (req, res) => {
   console.log(req.session);
   try {
@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
     }
 
     const posts = postData.map((post) => post.get({ plain: true }));
-
+    // res.status(200).json(posts)
     res.render("homepage", {
       posts,
       loggedIn: req.session.loggedIn,
@@ -33,6 +33,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET a post by id 
 router.get("/post/:id", async (req, res) => {
   console.log(req.session);
   try {
@@ -51,6 +52,7 @@ router.get("/post/:id", async (req, res) => {
       res.status(404).json("No posts found with this ID!");
     }
     const post = postData.get({ plain: true });
+    // res.status(200).json(post)
     res.render("single-post", {
       ...post,
       loggedIn: req.session.loggedIn,
@@ -70,6 +72,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// signup route
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");

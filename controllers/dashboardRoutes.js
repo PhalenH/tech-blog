@@ -5,7 +5,7 @@ const withAuth = require("../utils/auth");
 // url is /dashboard
 
 // gets all user posts
-router.get("/", withAuth, async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
       attributes: { exclude: ["password"] },
@@ -13,7 +13,7 @@ router.get("/", withAuth, async (req, res) => {
     });
 
     const userPost = userData.get({ plain: true });
-
+    // res.status(200).json(userPost)
     res.render("dashboard", {
       ...userPost,
       loggedIn: true,

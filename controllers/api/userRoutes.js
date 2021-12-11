@@ -6,7 +6,7 @@ const { User } = require("../../models");
 // gets all user, test to see if it works
 userRoutes.get("/", async (req, res) => {
   try {
-    const userData = await userRoutes.findAll();
+    const userData = await User.findAll();
     if (!userData) {
       res.status(400).json("No users found!");
       return;
