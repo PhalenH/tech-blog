@@ -4,38 +4,41 @@ const postData = [
   {
     title: "NFT",
     post_content: "I'd love to get an NFT soon, but we'll see.",
-    date_created: 12/12/2021,
-    user_id: 1
+    date_created: 12 / 12 / 2021,
+    user_id: 1,
   },
   {
     title: "Crypto",
-    post_content: "People invested in doge and thinking they'd make millions but here we are and most are not millionaires yet.",
-    date_created: 1/12/2021,
-    user_id: 2
+    post_content:
+      "People invested in doge and thinking they'd make millions but here we are and most are not millionaires yet.",
+    date_created: 1 / 12 / 2021,
+    user_id: 2,
   },
   {
     title: "Bootcamp",
     post_content: "Bootcamps can be tough, but it's fun",
-    date_created: 2/12/2021,
-    user_id: 3
+    date_created: 2 / 12 / 2021,
+    user_id: 3,
   },
   {
     title: "Web3",
-    post_content: "It's the future, while understanding it is tricky, the concept of it also can be intimidating. But with the right teacher and resources it will be an open plaground of what is possible for the future of the internet and really the whole world.",
-    date_created: 10/12/2020,
-    user_id: 4
+    post_content:
+      "It's the future, while understanding it is tricky, the concept of it also can be intimidating. But with the right teacher and resources it will be an open plaground of what is possible for the future of the internet and really the whole world.",
+    date_created: 10 / 12 / 2020,
+    user_id: 4,
   },
   {
     title: "Ethereum",
-    post_content: "it's is pricey, debating buying it everyday.",
-    date_created: 8/12/2020,
-    user_id: 1
+    post_content: "It's is pricey, debating buying it everyday.",
+    date_created: 8 / 12 / 2020,
+    user_id: 1,
   },
   {
     title: "Sixers",
-    post_content: "Pain, trade ben simmons, this isn't tech related but damn man, like give me SGA or Jaylen Brown and I'd be pumped.",
-    date_created: 4/12/2020,
-    user_id: 2
+    post_content:
+      "Pain, trade Ben Simmons, this isn't tech related but damn man, like give me SGA or Jaylen Brown and I'd be pumped.",
+    date_created: 4 / 12 / 2020,
+    user_id: 2,
   },
 ];
 
