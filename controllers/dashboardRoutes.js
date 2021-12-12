@@ -13,7 +13,6 @@ router.get("/", withAuth, async (req, res) => {
     });
 
     const posts = userData.get({ plain: true });
-    // res.status(200).json(posts)
     res.render("dashboard", {
       ...posts,
       loggedIn: true,

@@ -22,7 +22,6 @@ router.get("/", async (req, res) => {
     }
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    // res.status(200).json(posts)
     res.render("homepage", {
       posts,
       loggedIn: req.session.loggedIn,
@@ -52,7 +51,6 @@ router.get("/post/:id", async (req, res) => {
       res.status(404).json("No posts found with this ID!");
     }
     const post = postData.get({ plain: true });
-    // res.status(200).json(post)
     res.render("single-post", {
       ...post,
       loggedIn: req.session.loggedIn,
@@ -65,7 +63,7 @@ router.get("/post/:id", async (req, res) => {
 
 // Login route
 router.get("/login", (req, res) => {
-  res.render("dashboard");
+  res.render("login");
 });
 // the login should only render the login, only use re-direct when using auth method
 
