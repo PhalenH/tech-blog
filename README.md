@@ -1,7 +1,7 @@
-# tech-blog
-week 14 assignment
+# Tech Blog
 
-## Heroku URL
+
+## Deployed site
 https://afternoon-everglades-02639.herokuapp.com/
 
 ## Table of Contents
@@ -11,7 +11,7 @@ https://afternoon-everglades-02639.herokuapp.com/
 - [Questions](#Questions)
 
 ## Description: 
-The application will be a blog where developers can publish their blog posts and comment on other developers’ posts as well. It follows where developers can publish their blog posts and comment on other developers’ posts as well
+The application is a blog built using MySQL2, Express, Sequelize, Handlebars and dotenv. and follows the Model View Controller layout. A user can view post on the main page as well as view specific posts and their comments. Once signed in though, a user can go their own dashboard where they can create posts, update/delete previous posts made, and leave comments on other users' post. 
 
 ```
 GIVEN a CMS-style blog site
@@ -48,14 +48,10 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
-
 ```
 
 ## Installation: 
 - Download or clone the repo from GitHub
-
-## Usage: 
-
 
 ## Contributing: 
   There a no plans for public contribution at this time.
