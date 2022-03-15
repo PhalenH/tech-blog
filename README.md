@@ -54,9 +54,9 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 - Download or clone the repo from GitHub
 
 ## Contributing: 
-- Sole contributor for creation of the application, all functionality, and all styling.
+- Sole contributor for creation of the application, all functionality, and all styling. Worked with MySQL2, Express, Sequelize, Handlebars to complete application and use of RESTful routes for front-end/back-end interaction.
 - There a no plans for public contribution at this time.
 
 ## Questions
-- If you have any questions, email me at: phalenhazel@gmail.com
+- If you have any questions, or want to get in contact, email me at: phalenhazel@gmail.com
 - Checkout my GitHub profile [here](https://github.com/PhalenH)
