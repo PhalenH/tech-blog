@@ -54,8 +54,9 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 - Download or clone the repo from GitHub
 
 ## Contributing: 
-  There a no plans for public contribution at this time.
+- Sole contributor for creation of the application, all functionality, and all styling.
+- There a no plans for public contribution at this time.
 
 ## Questions
-- If you have any questions, email me at pchaze@yahoo.com
+- If you have any questions, email me at: phalenhazel@gmail.com
 - Checkout my GitHub profile [here](https://github.com/PhalenH)
